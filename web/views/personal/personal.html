@@ -1,0 +1,38 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="float: left;height: 50px;line-height: 50px;">
+        <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        个人中心
+        <span ng-click="back()" style="float:right;height: 50px;line-height: 50px;padding-right: 10px" class="glyphicon glyphicon-home"></span>
+    </div>
+</div>
+<div class="list-item">
+    <div class="avatar"></div>
+    <div class="list-info">
+        <p class="title">{{personal_info.name}}</p>
+        <span class="desc">{{personal_info.sex}}</span>&nbsp;&nbsp;&nbsp;<span>{{personal_info.age}}岁</span>&nbsp;&nbsp;&nbsp;<span>{{personal_info.xueli}}</span>
+        &nbsp;&nbsp;&nbsp;<span>{{personal_info.gzjy}}</span>
+        <a href="/#/edit_resume" style="float: right;padding-right: 10px;color: black"><span class="glyphicon glyphicon-edit"></span>编辑</a>
+    </div>
+</div>
+<div style="background: aqua;width: 100%;font-size: 17px;height: 40px;line-height: 40px">
+    我的投递
+</div>
+
+<div style="position: fixed;bottom: 0px;left: 0px;background: #ddd;height: 50px;width: 100%;display: flex">
+    <span class="footer_style" ng-click="goHome()">
+        <span class="glyphicon glyphicon-home"></span>
+        职位
+    </span>
+    <span class="footer_style" ng-click="goSearch()">
+        <span class="glyphicon glyphicon-search"></span>
+        搜索
+    </span>
+    <span class="footer_style" ng-click="goPersonal()" ng-class="{true: 'footer_style zw_style',false: 'footer_style'}[bools]">
+        <span class="glyphicon glyphicon-user"></span>
+        我的
+    </span>
+</div>

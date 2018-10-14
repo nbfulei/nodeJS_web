@@ -1,0 +1,44 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="float: left;height: 50px;line-height: 50px;">
+        <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        发布的职位
+    </div>
+</div>
+<div style="height: 40px;line-height: 40px;float:right;clear: both;" ng-click="loads()">
+    <span class="glyphicon glyphicon-download-alt"></span>导出
+</div>
+<div style="height: 400px;overflow-y:auto;clear: both;">
+    <table class="table table-bordered">
+        <thead style="background: turquoise">
+            <tr>
+                <th style="text-align: center;width: 30%">职位名称</th>
+                <th style="text-align: center;width: 30%">工资待遇</th>
+                <th style="text-align: center;width: 30%">工作地点</th>
+                <th style="text-align: center;width: 10%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,item) in job_list">
+                <td style="text-align: center;">{{item.zwmc}}</td>
+                <td style="text-align: center;">{{item.money}}</td>
+                <td style="text-align: center;">{{item.addr}}</td>
+                <td>
+                    <div class="btn-group" ng-class="{true:'dropdown',false:'dropup'}[vm.dropMenuStatus]">
+                        <button class="btn btn-default" data-toggle="dropdown" aria-expanded="false" ng-click="vm.dropMenu($event)">
+                            <span>操作</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="changejob.edit({id:o.id})"><span class="glyphicon glyphicon-edit" style="color: yellow"></span>编辑职位</a></li>
+                            <li><a ui-sref="changejob.delete({id:o.id})"><span class="glyphicon glyphicon-trash" style="color: red"></span>删除职位</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

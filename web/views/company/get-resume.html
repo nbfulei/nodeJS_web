@@ -1,0 +1,43 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="float: left;height: 50px;line-height: 50px;">
+        <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        收到的简历
+    </div>
+</div>
+<div style="height: 40px;line-height: 40px;float:right;clear: both;" ng-click="loads()">
+    <span class="glyphicon glyphicon-download-alt"></span>导出
+</div>
+
+<div style="margin-top: 20px;height: 300px;overflow-y:auto;clear: both;">
+    <table class="table table-bordered">
+        <thead style="background: turquoise">
+            <tr>
+                <th style="text-align: center;width: 30%">简历ID</th>
+                <th style="text-align: center;width: 40%">时间</th>
+                <th style="text-align: center;width: 30%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in resume_list">
+                <td style="text-align: center;" ng-click="toDetail(item.resume_id)">{{item.resume_id}}</td>
+                <td>{{item.date}}</td>
+                <td>
+                    <div class="btn-group" ng-class="{true:'dropdown',false:'dropup'}[vm.dropMenuStatus]">
+                        <button class="btn btn-default" data-toggle="dropdown" aria-expanded="false" ng-click="vm.dropMenu($event)">
+                            <span>操作</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="changejob.edit({id:o.id})"><span class="glyphicon glyphicon-edit" style="color: yellow"></span>面试邀请</a></li>
+                            <li><a ui-sref="changejob.delete({id:o.id})"><span class="glyphicon glyphicon-trash" style="color: red"></span>删除简历</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

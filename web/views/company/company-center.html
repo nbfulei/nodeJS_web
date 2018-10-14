@@ -1,0 +1,39 @@
+<div style="background: rgb(1, 180, 138);padding-top: 15px;width: 100%">
+    <div class="pic" id="pic_id">
+        <span class="glyphicon glyphicon-camera" style="font-size: 25px"></span>
+        <input id = "img" style="opacity: 0;width: 120px;height: 120px;position: relative;top:-120px" type="file" accept="image/*" multiple />
+    </div>
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        {{username}}
+    </div>
+</div>
+<div style="background: #ddd">
+    <div style="display: flex">
+        <div class="footer_style" style="font-size: 17px;text-align: left">发布的职位:</div>
+        <div class="footer_style" style="text-align: right">
+            <span class="glyphicon glyphicon-chevron-right" ng-click="goFbdzw()"></span>
+        </div>
+    </div>
+    <hr style="margin-top: 0px;margin-bottom: 0px">
+    <div style="display: flex">
+        <div class="footer_style" style="font-size: 17px;text-align: left">收到的简历:</div>
+        <div class="footer_style" style="text-align: right">
+            <span class="glyphicon glyphicon-chevron-right" ng-click="goGetresume()"></span>
+        </div>
+    </div>
+    <hr style="margin-top: 0px;margin-bottom: 0px">
+</div>
+<div style="position: fixed;bottom: 0px;left: 0px;background: #ddd;height: 50px;width: 100%;display: flex">
+    <div class="footer_style" ng-click="jlSearch()">
+        <span class="glyphicon glyphicon-home"></span>
+        简历搜索
+    </div>
+    <div class="footer_style" ng-click="postJob()">
+        <span class="glyphicon glyphicon-search"></span>
+        发布职位
+    </div>
+    <div class="footer_style" ng-click="goMine()" ng-class="{true: 'footer_style zw_style',false: 'footer_style'}[bools]">
+        <span class="glyphicon glyphicon-user"></span>
+        我的
+    </div>
+</div>

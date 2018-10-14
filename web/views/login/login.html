@@ -1,0 +1,36 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        XXX网-登陆
+    </div>
+</div>
+<div class="container" style="margin-top: 20%">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="control-label from_label">个人/企业用户:</label>
+            <select class="from_input" ng-model="role" ng-change="updateType(role)">
+                <option value="">请选择用户类型</option>
+                <option value="personal">个人</option>
+                <option value="company">企业</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label from_label">用户名:</label>
+            <input class="from_input" type="text" ng-model="username">
+        </div>
+        <div class="form-group">
+            <label class="control-label from_label">密码:</label>
+            <input class="from_input" type="password" ng-model="password">
+        </div>
+        <div style="display: flex;">
+            <div class="footer_style" style="background: #ddd;width: 80px;height: 30px;line-height: 30px;border-radius: 20px;">
+                <a href="/#/register" style="color: rgb(1, 180, 138);">注册</a>
+            </div>
+            <div class="footer_style" style="height: 30px;line-height: 30px">
+                <a href="" type="submit" class="btn btn-primary" ng-click="doLogin()">登陆</a>
+            </div>
+            <div class="footer_style" style="height: 30px;line-height: 30px">
+                <a href="">忘记密码？</a>
+            </div>
+        </div>
+    </form>
+</div>

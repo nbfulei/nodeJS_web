@@ -1,0 +1,70 @@
+<div style="position:absolute; height:600px;width: 100%; overflow-y:auto">
+    <div style="background: rgb(1, 180, 138)">
+        <div style="float: left;height: 50px;line-height: 50px;">
+            <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
+                <span class="topcoat-icon topcoat-icon--back"></span>
+            </a>
+        </div>
+        <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+            职位详情
+            <span ng-click="back()" style="float:right;height: 50px;line-height: 50px;padding-right: 10px" class="glyphicon glyphicon-home"></span>
+        </div>
+    </div>
+    <div style="width: 100%">
+        <div style="width: 80%;padding-left: 10px;float: left;height: 50px;line-height: 50px;color: black;font-size: 17px;font-weight: bold;">
+            {{zw_conetent.zwmc}}
+        </div>
+        <div style="width: 20%;float: left;height: 50px;text-align: center">
+            <span ng-if="is_sc" class="glyphicon glyphicon-star-empty" style="font-size: 25px;padding-top: 12px"></span>
+            <span ng-if="!is_sc" class="glyphicon glyphicon-star" style="font-size: 25px;padding-top: 12px"></span>
+        </div>
+        <hr style="margin-top: 0px;width: 100%">
+        <div style="height: 50px;width: 100%;display: flex">
+            <div class="footer_style">
+                <span class="glyphicon glyphicon-usd" style="color: rgb(1, 180, 138)"></span><span style="font-size: 15px">{{zw_conetent.money}}</span>
+            </div>
+            <div class="footer_style">
+                <span class="glyphicon glyphicon-map-marker" style="color: rgb(1, 180, 138)"></span><span style="font-size: 15px">{{zw_conetent.city}}</span>
+            </div>
+            <div class="footer_style">
+                <span class="glyphicon glyphicon-time" style="color: rgb(1, 180, 138)"></span><span style="font-size: 15px">全职</span>
+            </div>
+        </div>
+        <div style="height: 50px;width: 100%;display: flex">
+            <div class="footer_style">
+                <span class="glyphicon glyphicon-briefcase" style="color: rgb(1, 180, 138)"></span><span style="font-size: 15px">{{zw_conetent.jingyan}}</span>
+            </div>
+            <div class="footer_style">
+                <span class="glyphicon glyphicon-hdd" style="color: rgb(1, 180, 138)"></span><span style="font-size: 15px">{{zw_conetent.xueli}}</span>
+            </div>
+            <div class="footer_style">
+
+            </div>
+        </div>
+        <div style="padding-left: 30px">
+            <label>职位诱惑：</label><span>{{zw_conetent.zwyh}}</span><span ng-click="chat(company_conetent)" style="float:right;margin-right: 10px;height: 20px;border-radius: 20px;background: rgb(1, 180, 138);color: #fff"><span class="glyphicon glyphicon-comment"></span>与HR沟通</span>
+        </div>
+        <hr style="margin-top: 0px;width: 100%">
+        <div style="width: 100%;float: left;" ng-click="goCompanyDetail(item.z_id)">
+            <div style="width: 20%;height: 80px;border: 1px solid #ddd;float: left;"></div>
+            <div style="float: left;width: 80%;height: 80px; border: 1px solid #ddd;line-height: 35px">
+                <div style="float: left;">
+                    <div style="margin-left: 10px"><label style="color: black;">{{company_conetent.name}}</label></div>
+                    <div style="margin-left: 10px">{{company_conetent.hangye}}/{{company_conetent.company_type}}/{{company_conetent.gsgm}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position: absolute;top: 347px;background: aquamarine; width: 100%;color: rgb(1, 180, 138);font-size: 17px;height: 50px;line-height: 50px;padding-left: 10px">
+        职位描述
+    </div>
+    <div style="position: relative;top: 60px;padding-left: 10px"><label>职位诱惑:</label></div>
+    <div style="color: black;position: relative;top: 60px;padding-left: 10px">{{zw_conetent.zwyh}}</div>
+    <div style="position: relative;top: 60px;padding-left: 10px;margin-top: 50px"><label>职位描述:</label></div>
+    <div style="color: black;position: relative;top: 60px;padding-left: 10px">{{zw_conetent.zwms}}</div>
+    <div style="position: relative;top: 60px;padding-left: 10px;margin-top: 50px"><label>工作职责:</label></div>
+    <div style="color: black;position: relative;top: 60px;padding-left: 10px">{{zw_conetent.gzzz}}</div>
+</div>
+<div ng-click="todiJl()" style="position: fixed;bottom: 0px;left: 0px;background: rgb(1, 180, 138);height: 50px;line-height: 50px; width: 100%;text-align: center;color: #fff;font-size: 17px">
+    投递简历
+</div>

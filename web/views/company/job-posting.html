@@ -1,0 +1,63 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        XXX网
+    </div>
+</div>
+<div style="height: 400px;padding-top: 5%">
+    <div style="display: flex;margin-top: 10px">
+        <div class="footer_style" style="height: 30;line-height: 30px">职位:</div>
+        <div class="footer_style">
+            <input type="text" class="form-control" name="gzzw" style="height: 30px;border-radius: 10px;" ng-model="gzzw" />
+        </div>
+        <div class="footer_style"></div>
+    </div>
+    <div style="display: flex;">
+        <div class="footer_style" style="height: 30;line-height: 30px">公司名称:</div>
+        <div class="footer_style">
+            <input type="text" disabled class="form-control" name="companyName" style="height: 30px;border-radius: 10px;"
+                ng-model="companyName" />
+        </div>
+        <div class="footer_style"></div>
+    </div>
+    <div style="display: flex;">
+        <div class="footer_style" style="height: 30;line-height: 30px">公司ID:</div>
+        <div class="footer_style">
+            <input type="text" disabled class="form-control" name="companyId" style="height: 30px;border-radius: 10px;"
+                ng-model="companyId" />
+        </div>
+        <div class="footer_style"></div>
+    </div>
+    <div style="display: flex;">
+        <div class="footer_style" style="height: 30;line-height: 30px">工作地点:</div>
+        <div class="footer_style">
+            <input type="text" class="form-control" name="gzdd" style="height: 30px;border-radius: 10px;" ng-model="gzdd" />
+        </div>
+        <div class="footer_style"></div>
+    </div>
+    <div style="display: flex;">
+        <div class="footer_style" style="height: 30;line-height: 30px">工资待遇:</div>
+        <div class="footer_style">
+            <input type="text" class="form-control" name="gzdy" style="height: 30px;border-radius: 10px;" ng-model="gzdy" />
+        </div>
+        <div class="footer_style"></div>
+    </div>
+    <div style="display: flex;margin-top: 20px">
+        <button type="submit" class="btn btn-primary footer_style" style="height: 50px;font-size: 16px" ng-click="fbZw()">发布职位</button>
+    </div>
+</div>
+
+<div style="position: fixed;bottom: 0px;left: 0px;background: #ddd;height: 50px;width: 100%;display: flex">
+    <div class="footer_style" ng-click="jlSearch()">
+        <span class="glyphicon glyphicon-home"></span>
+        简历搜索
+    </div>
+    <div class="footer_style" ng-click="postJob()" ng-class="{true: 'footer_style zw_style',false: 'footer_style'}[bools]"
+        ng-click="goSearch()">
+        <span class="glyphicon glyphicon-tags"></span>
+        发布职位
+    </div>
+    <div class="footer_style" ng-click="goMine()">
+        <span class="glyphicon glyphicon-user"></span>
+        我的
+    </div>
+</div>

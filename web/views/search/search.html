@@ -1,0 +1,52 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="float: left;height: 50px;line-height: 50px;">
+        <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        XXX网
+        <span ng-click="back()" style="float:right;height: 50px;line-height: 50px;padding-right: 10px" class="glyphicon glyphicon-home"></span>
+    </div>
+</div>
+<div class="form-group" style="padding-left: 10px;padding-top: 10px;">
+    <select class="form-control" style="width: 35%;height: 50px;float: left;" ng-model="queryType">
+        <option value="">请选择查询类型</option>
+        <option value="公司名称">公司名称</option>
+        <option value="职位名称">职位名称</option>
+    </select>
+    <input type="text" class="form-control" style="width: 55%;height: 50px;float: left;" ng-model="param"/>
+    <button class="btn btn-primary" style="float: left;width: 10%;height: 50px;text-align: center" ng-click="doQuery()">
+        <span class="glyphicon glyphicon-search" ></span>
+    </button>
+</div>
+<div class="content">
+    <div ng-if="zw_list.length>0" ng-repeat="item in zw_list" style="width: 100%;float: left;" ng-click="goDetail(item.id)">
+        <hr style="margin-top: 0px">
+        <div style="width: 20%;height: 80px;border: 1px solid #ddd;float: left;"></div>
+        <div style="float: left;width: 80%;height: 80px; border: 1px solid #ddd;line-height: 35px">
+            <div style="float: left;">
+                <div style="margin-left: 10px"><label style="color: black;">{{item.companyName}}</label></div>
+                <div style="margin-left: 10px">{{item.zwmc}}({{item.addr}})</div>
+            </div>
+            <div style="float: right;padding-right: 5px">{{item.money}}</div>
+        </div>
+    </div>
+    <div ng-if="zw_list.length ===0" style="width: 100%;text-align: center;padding-top: 150px;font-size: 16px;color: black">
+        暂无职位！
+    </div>
+</div>
+<div style="position: fixed;bottom: 0px;left: 0px;background: #ddd;height: 50px;width: 100%;display: flex">
+    <span class="footer_style" ng-click="goHome()">
+        <span class="glyphicon glyphicon-home"></span>
+        职位
+    </span>
+    <span class="footer_style" ng-class="{true: 'footer_style zw_style',false: 'footer_style'}[bools]" ng-click="goSearch()">
+        <span class="glyphicon glyphicon-search"></span>
+        搜索
+    </span>
+    <span class="footer_style" ng-click="goPersonal()">
+        <span class="glyphicon glyphicon-user"></span>
+        我的
+    </span>
+</div>

@@ -1,0 +1,18 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="float: left;height: 50px;line-height: 50px;">
+        <a class="topcoat-icon-button--quiet back-button" href="" ng-click="back()">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        与&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px;">{{obj.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;沟通中
+    </div>
+</div>
+<footer style="position: fixed;bottom: 0px;width: 100%;height: 50px;background: #ddd">
+    <div style="float: left;width:73%;">
+        <input type="text" class="form-control" style="height: 50px;" ng-model="msg">
+    </div>
+    <div style="float: left;width:19%;">
+        <button type="submit" class="btn btn-primary" style="height: 50px" ng-click="sendMsg()">Send</button>
+    </div>
+</footer>

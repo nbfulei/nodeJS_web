@@ -1,0 +1,74 @@
+<div style="background: rgb(1, 180, 138)">
+    <div style="text-align: center;height: 50px;line-height: 50px;color: #fff;font-size: 16px">
+        XXX网
+    </div>
+</div>
+<div style="height: 50px;line-height: 50px">
+    <span style="padding-left: 10px">10秒钟定制职位</span>
+    <span style="float:right;border: 1px solid #ddd;background: #ddd;border-radius: 20px;width: 80px;text-align: center;height: 30px;line-height: 30px;margin-top: 10px;margin-right: 10px">
+        <a href="/#/login" ng-if="isLogin" style="color: rgb(1, 180, 138);">去登陆</a>
+        <div ng-if="!isLogin" class="add_btn btn-group" style="padding-left: 36%">
+            <a href="" style="color:rgb(1, 180, 138);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{username}}</a>
+            <div class="dropdown-menu dropdown-menu-widther" style="height: 66px;width: 80px;">
+                <ul class="menu_ul">
+                    <li>
+                        <button class="btn btn-primary" ng-click="loginOut()">退出</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-primary" ng-click="bindPhone('/bindPhone')">绑定手机</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </span>
+</div>
+<div ng-repeat="item in employees" style="width: 100%;float: left;" ng-click="goDetail(item.id,item.company_id)">
+    <hr style="margin-top: 0px">
+    <div style="width: 20%;height: 80px;border: 1px solid #ddd;float: left;"></div>
+    <div style="float: left;width: 80%;height: 80px; border: 1px solid #ddd;line-height: 35px">
+        <div style="float: left;">
+            <div style="margin-left: 10px"><label style="color: black;">{{item.companyName}}</label></div>
+            <div style="margin-left: 10px">{{item.zwmc}}({{item.addr}})</div>
+        </div>
+        <div style="float: right;padding-right: 5px">{{item.money}}</div>
+    </div>
+</div>
+<!-- <div class="list-wrap">
+    <div class="list-item" ng-repeat="item in employees" ng-click="goDetail(item.id)">
+        <div class="avatar"></div>
+        <div class="list-info">
+            <label class="title">{{item.companyName}}</label>
+            <p class="desc">{{item.zwmc}}({{item.addr}})</p>
+        </div>
+    </div>
+</div> -->
+
+<div style="position: fixed;bottom: 0px;left: 0px;background: #ddd;height: 50px;width: 100%;display: flex">
+    <div class="footer_style" ng-class="{true: 'footer_style zw_style',false: 'footer_style'}[bools]">
+        <span class="glyphicon glyphicon-home"></span>
+        职位
+    </div>
+    <div class="footer_style" ng-click="goSearch()">
+        <span class="glyphicon glyphicon-search"></span>
+        搜索
+    </div>
+    <div class="footer_style" ng-click="goPersonal()">
+        <span class="glyphicon glyphicon-user"></span>
+        我的
+    </div>
+</div>
+
+
+<!-- <div class="add_btn btn-group">
+    <button class="bordered btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{username}}</button>
+    <div class="dropdown-menu dropdown-menu-widther">
+        <ul class="menu_ul">
+            <li>
+                <button class="btn btn-primary" ng-click="loginOut()">退出登陆</button>
+            </li>
+            <li>
+                <button class="btn btn-primary" ng-click="bindPhone('/bindPhone')">绑定手机号</button>
+            </li>
+        </ul>
+    </div>
+</div> -->

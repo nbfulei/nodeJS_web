@@ -1,0 +1,31 @@
+<div class="topcoat-navigation-bar" style="background: rgb(1, 180, 138)">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" ng-click="black('/home')">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title" style="color: #fff">绑定手机号</h1>
+    </div>
+</div>
+
+<div style="margin-top: 30px">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="control-label from_label">手机号:</label>
+            <input class="from_input" type="text" ng-model="phone">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label from_label">验证码:</label>
+            <input class="from_input" style="width: 40%" type="text" ng-model="yzm">
+            <button type="submit" style="width: 20%;text-align: center" id="hqyzm" class="btn btn-primary" ng-click="getYzm()">点击获取</button>
+        </div>
+        <span style="color: red;margin-left: 30%;position: relative;top: -18px" ng-if="bool">验证码输入有误!</span>
+        <div class="form-group">
+            <div style="position: fixed;top: 40%;left: 45%;">
+                <button type="submit" class="btn btn-primary" ng-click="doBindPhone()">提交</button>
+            </div>
+        </div>
+    </form>
+</div>
