@@ -9,8 +9,18 @@ var fs = require("fs")
 
 
 exports.findAll = function (req, res) {
-
-    db.query('SELECT * from home_list', function (err, rows) {
+    var page = req.params.page;
+    var pageSize = req.params.pageSize;
+    // var sql = 'SELECT * from home_list limit '+page+','+pageSize;
+    var sql = 'SELECT * from home_list';
+    console.log(sql);
+    db.query(sql, function (err, rows) {
+        // if (rows) {
+        //     var obj = {
+        //         status: 200,
+        //         conetent: rows
+        //     }
+        // }
         res.jsonp(rows);
     })
 }

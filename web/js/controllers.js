@@ -1,6 +1,20 @@
 'use strict';
 
 var app = angular.module('myApp.controllers', []);
+
+// app.run(function($ionicPlatform) {
+//     $ionicPlatform.ready(function() {
+//       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+//       // for form inputs)
+//       if(window.cordova && window.cordova.plugins.Keyboard) {
+//         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+//       }
+//       if(window.StatusBar) {
+//         StatusBar.styleDefault();
+//       }
+//     });
+//   })
+
 app.controller('MainCtrl', ['$scope', '$rootScope', '$window', '$location', function ($scope, $rootScope, $window, $location) {
     $scope.slide = '';
     $rootScope.back = function () {
@@ -35,7 +49,19 @@ app.controller('HomeCtrl', ['$scope', '$location', 'Employee', function ($scope,
         $scope.username = JSON.parse(userInfo).userName;
         $scope.isLogin = false;
     }
-    $scope.employees = Employee.query(); // 查询列表
+    // var params = {
+    //     page: 1,
+    //     pageSize: 5
+    // }
+
+    // Employee.get(params, function (res) {
+    //     if (res.status === 200) {
+    //         $scope.employees = res.conetent;
+    //     }
+    // }); // 查询列表
+    $scope.employees = Employee.query();
+    
+
 
     $scope.goDetail = function (id, company_id) {
         $location.url('/detail');
@@ -53,7 +79,6 @@ app.controller('HomeCtrl', ['$scope', '$location', 'Employee', function ($scope,
     $scope.goHome = function () {
         $location.url('/home');
     }
-    console.log($scope.employees);
     $scope.loginOut = function () {
         sessionStorage.clear();
         $scope.isLogin = true;
@@ -63,6 +88,9 @@ app.controller('HomeCtrl', ['$scope', '$location', 'Employee', function ($scope,
     $scope.bindPhone = function (path) {
         $location.url(path);
     }
+
+
+
 }])
 
 app.controller('LoginCtrl', ['$scope', '$routeParams', 'Login', '$location', function ($scope, $routeParams, Login, $location) {
@@ -157,7 +185,7 @@ app.controller('registerCtrl', ['$scope', '$routeParams', 'Register', '$location
                 }
             })
 
-        }else{
+        } else {
             alert('两次密码不一致，请重新输入！');
         }
 
@@ -335,9 +363,9 @@ app.controller('DetailCtrl', ['$scope', '$routeParams', '$location', 'zw_detail'
     }
 
     // 跳转到聊天界面
-    $scope.chat = function(item) {
+    $scope.chat = function (item) {
         console.log(item);
-        sessionStorage.setItem('companyInfo',JSON.stringify(item));
+        sessionStorage.setItem('companyInfo', JSON.stringify(item));
         $location.url('/chat');
     }
 
@@ -389,7 +417,7 @@ app.controller('PersonalCtrl', ['$scope', '$routeParams', '$location', 'GetResum
     $scope.bools = true;
 
     var user = sessionStorage.getItem('user');
-    if(user===null) {
+    if (user === null) {
         alert('请先登陆！')
         $location.url('/login');
     }
@@ -670,7 +698,9 @@ app.controller('Edit_resumeCtrl', ['$scope', '$routeParams', '$location', functi
     $scope.test = function () {
         var socket = io.connect('http://127.0.0.1:3000');
         console.log(params);
-        socket.emit('message', {text: params});
+        socket.emit('message', {
+            text: params
+        });
 
         Test.post(params, function (res) {
 
@@ -727,10 +757,12 @@ app.controller('ChatCtrl', ['$scope', '$routeParams', '$location', function ($sc
     var company = sessionStorage.getItem('companyInfo');
     console.log(company);
     $scope.obj = JSON.parse(company);
-    $scope.sendMsg = function() {
+    $scope.sendMsg = function () {
         var socket = io.connect('http://127.0.0.1:3000');
-        socket.emit('message', {text: $scope.msg});
-        socket.on('c_hi',function(data){
+        socket.emit('message', {
+            text: $scope.msg
+        });
+        socket.on('c_hi', function (data) {
             console.log(data);
         })
     }
